@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OBESITY | Progressive Metal / Djent - México</title>
+    <meta name="description" content="OBESITY - Banda instrumental de metal progresivo y djent originaria de México. Rítmico, brutal, pegajoso, agresivo, groovie y hasta dulce.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #111111;
+            --bg-tertiary: #1a1a1a;
+            --bg-card: #141414;
+            --text-primary: #ffffff;
+            --text-secondary: #b0b0b0;
+            --text-muted: #666666;
+            --accent: #00ff88;
+            --accent-hover: #00cc6a;
+            --accent-dim: rgba(0, 255, 136, 0.15);
+            --accent-secondary: #ff6b35;
+            --border: #2a2a2a;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-primary); }
+        ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 4px; }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo-img { height: 50px; width: auto; }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover { color: var(--accent); }
+
+        .nav-social { display: flex; gap: 1rem; }
+        .nav-social a { color: var(--text-secondary); transition: color 0.3s ease; }
+        .nav-social a:hover { color: var(--accent); }
+        .nav-social svg { width: 20px; height: 20px; fill: currentColor; }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 2px;
+            background: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding: 6rem 2rem 4rem;
+            text-align: center;
+        }
+
+        .hero-video-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .hero-video-bg video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-video-bg::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(10, 10, 10, 0.7);
+        }
+
+        .hero-logo {
+            max-width: 450px;
+            width: 85%;
+            margin-bottom: 1.5rem;
+            filter: brightness(0) invert(1) drop-shadow(0 0 30px rgba(255,255,255,0.3));
+        }
+
+        .hero-logo img { width: 100%; height: auto; }
+
+        .hero-tagline {
+            font-size: 1rem;
+            color: var(--accent);
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+
+        .hero-spotify {
+            width: 100%;
+            max-width: 500px;
+            margin-bottom: 2rem;
+        }
+
+        .hero-spotify iframe {
+            border-radius: 12px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .hero-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.85rem 1.75rem;
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.8rem;
+            letter-spacing: 0.05em;
+            transition: all 0.3s ease;
+        }
+
+        .hero-btn:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-dim);
+        }
+
+        .hero-btn.primary {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: var(--bg-primary);
+        }
+
+        .hero-btn.primary:hover {
+            background: var(--text-primary);
+            border-color: var(--text-primary);
+        }
+
+        .hero-btn svg { width: 16px; height: 16px; fill: currentColor; }
+
+        /* Section Styles */
+        section { padding: 5rem 4rem; position: relative; }
+
+        .section-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .section-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+        }
+
+        .section-bg::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(10, 10, 10, 0.85);
+        }
+
+        /* About Section */
+        .about {
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about .section-bg {
+            background-image: url('https://res.cloudinary.com/diobgaxfl/image/upload/v1770231666/IMG_3923_f6sawt.jpg');
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-content p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Discography Section */
+        .discografia {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .discografia .section-bg {
+            background-image: url('https://res.cloudinary.com/diobgaxfl/image/upload/v1770231665/IMG_9660_azpxaa.jpg');
+        }
+
+        .discografia .section-bg::after {
+            background: rgba(10, 10, 10, 0.9);
+        }
+
+        .albums-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(280px, 350px));
+            gap: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .album-card {
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.4s ease;
+        }
+
+        .album-card:hover { transform: translateY(-10px); }
+        .album-card a { display: block; text-decoration: none; color: inherit; }
+
+        .album-cover {
+            position: relative;
+            aspect-ratio: 1;
+            overflow: hidden;
+            background: var(--bg-tertiary);
+        }
+
+        .album-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .album-card:hover .album-cover img {
+            transform: scale(1.05);
+        }
+
+        .album-type {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: var(--accent);
+            color: var(--bg-primary);
+            padding: 0.3rem 0.75rem;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .album-info { padding: 1.25rem 0; text-align: center; }
+
+        .album-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.25rem;
+        }
+
+        .album-year { color: var(--text-muted); font-size: 0.9rem; }
+
+        /* Singles Section */
+        .singles {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .singles .section-bg {
+            background-image: url('https://res.cloudinary.com/diobgaxfl/image/upload/v1770231665/IMG_7495_copia_bpbdsi.jpg');
+        }
+
+        .singles .section-bg::after {
+            background: rgba(10, 10, 10, 0.88);
+        }
+
+        .singles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .single-card { transition: transform 0.3s ease; }
+        .single-card:hover { transform: translateY(-8px); }
+        .single-card a { display: block; text-decoration: none; color: inherit; }
+
+        .single-cover {
+            aspect-ratio: 1;
+            overflow: hidden;
+            background: var(--bg-tertiary);
+            margin-bottom: 1rem;
+        }
+
+        .single-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .single-card:hover .single-cover img {
+            transform: scale(1.05);
+        }
+
+        .single-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+            text-align: center;
+        }
+
+        .single-year { color: var(--text-muted); font-size: 0.85rem; text-align: center; }
+
+        /* Band Divider */
+        .band-divider { padding: 3rem 0; text-align: center; background: var(--bg-primary); }
+        .band-divider img { height: 80px; width: auto; opacity: 0.5; }
+
+        /* Band Section */
+        .banda {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .banda .section-bg {
+            background-image: url('https://res.cloudinary.com/diobgaxfl/image/upload/v1770231664/IMG_2615_ww5bsr.jpg');
+            background-position: center top;
+        }
+
+        .banda .section-bg::after {
+            background: linear-gradient(to bottom, rgba(10, 10, 10, 0.6) 0%, rgba(10, 10, 10, 0.95) 100%);
+        }
+
+        .band-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .band-photo {
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            overflow: hidden;
+            border-radius: 4px;
+        }
+
+        .band-photo img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .members-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .member-card { text-align: center; }
+        .member-card a { text-decoration: none; color: inherit; display: block; }
+
+        .member-name {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            transition: color 0.3s ease;
+        }
+
+        .member-card:hover .member-name { color: var(--accent); }
+        .member-role { color: var(--text-muted); font-size: 0.9rem; font-weight: 500; }
+
+        /* Shows Section */
+        .shows {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .shows-video-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .shows-video-bg video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .shows-video-bg::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(10, 10, 10, 0.8);
+        }
+
+        .shows-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .shows-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto 4rem;
+        }
+
+        .show-card { position: relative; overflow: hidden; transition: transform 0.4s ease; }
+        .show-card:hover { transform: translateY(-8px); }
+        .show-card a { display: block; text-decoration: none; color: inherit; }
+
+        .show-image {
+            aspect-ratio: 1;
+            overflow: hidden;
+            position: relative;
+            background: var(--bg-tertiary);
+        }
+
+        .show-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .show-card:hover .show-image img { transform: scale(1.05); }
+
+        .show-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 2rem 1.5rem 1.5rem;
+            background: linear-gradient(transparent, rgba(0,0,0,0.9));
+        }
+
+        .show-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .show-date { color: var(--accent); font-size: 0.85rem; font-weight: 500; }
+
+        /* Shared Stage inside Shows */
+        .shared-stage-inner {
+            text-align: center;
+            padding-top: 3rem;
+        }
+
+        .shared-stage-inner h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .bands-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .band-tag {
+            padding: 0.6rem 1.25rem;
+            background: rgba(20, 20, 20, 0.6);
+            border: 1px solid var(--border);
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            transition: all 0.3s ease;
+        }
+
+        .band-tag:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-dim);
+        }
+
+        /* Listen Section */
+        .listen {
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .listen .section-bg {
+            background-image: url('https://res.cloudinary.com/diobgaxfl/image/upload/v1770231660/WhatsApp_Image_2024-01-17_at_11.23.17_yewpnf.jpg');
+        }
+
+        .listen .section-bg::after {
+            background: rgba(10, 10, 10, 0.85);
+        }
+
+        .platforms-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .platform-link {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 1.75rem;
+            background: rgba(20, 20, 20, 0.8);
+            border: 1px solid var(--border);
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        .platform-link:hover { border-color: var(--accent); background: var(--accent-dim); }
+        .platform-link svg { width: 22px; height: 22px; fill: currentColor; }
+        .platform-link:hover svg { fill: var(--accent); }
+
+        /* Footer */
+        footer {
+            padding: 4rem 4rem 2rem;
+            background: var(--bg-primary);
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .footer-logo { margin-bottom: 2rem; }
+        .footer-logo img { height: 60px; width: auto; opacity: 0.6; }
+
+        .footer-social {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-social a {
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+            transition: all 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-dim);
+        }
+
+        .footer-social svg { width: 20px; height: 20px; fill: currentColor; }
+
+        .footer-contact { margin-bottom: 2rem; }
+        .footer-contact p { color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 0.5rem; }
+        .footer-contact a { color: var(--accent); text-decoration: none; }
+        .footer-contact a:hover { text-decoration: underline; }
+        .footer-copy { color: var(--text-muted); font-size: 0.8rem; }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--bg-primary);
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .mobile-menu.active { opacity: 1; visibility: visible; }
+
+        .mobile-menu a {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.8rem;
+            letter-spacing: 0.1em;
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .mobile-menu a:hover { color: var(--accent); }
+
+        .mobile-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            font-size: 2rem;
+            color: var(--text-primary);
+            cursor: pointer;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            section { padding: 4rem 2rem; }
+            nav { padding: 1rem 2rem; }
+            .members-grid { gap: 1.5rem; }
+            .shows-grid { grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+        }
+
+        @media (max-width: 768px) {
+            nav { padding: 1rem 1.5rem; }
+            .nav-links, .nav-social { display: none; }
+            .menu-toggle { display: flex; }
+            .hero { padding: 5rem 1.5rem 3rem; }
+            .hero-logo { max-width: 280px; }
+            .hero-buttons { flex-direction: column; align-items: center; }
+            .hero-btn { width: 100%; max-width: 280px; justify-content: center; }
+            .section-title { font-size: 2rem; }
+            .albums-grid { grid-template-columns: 1fr; max-width: 320px; }
+            .members-grid { grid-template-columns: 1fr; max-width: 200px; }
+            .band-photo { max-width: 100%; }
+            .shows-grid { grid-template-columns: 1fr; max-width: 350px; margin-left: auto; margin-right: auto; }
+            footer { padding: 3rem 1.5rem 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="#inicio" class="logo">
+            <img src="https://res.cloudinary.com/diobgaxfl/image/upload/v1770231662/obesity_vector_vnswx7.png" alt="Obesity" class="logo-img">
+        </a>
+        <ul class="nav-links">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#discografia">Discografía</a></li>
+            <li><a href="#singles">Singles</a></li>
+            <li><a href="#banda">Banda</a></li>
+            <li><a href="#shows">Shows</a></li>
+            <li><a href="#escuchar">Escuchar</a></li>
+        </ul>
+        <div class="nav-social">
+            <a href="https://www.facebook.com/Obesityband/" target="_blank"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+            <a href="https://www.instagram.com/obesityband/" target="_blank"><svg viewBox="0 0 24 24"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg></a>
+            <a href="https://www.youtube.com/c/obesityband" target="_blank"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+        </div>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <span class="mobile-close" onclick="toggleMenu()">&times;</span>
+        <a href="#inicio" onclick="toggleMenu()">Inicio</a>
+        <a href="#nosotros" onclick="toggleMenu()">Nosotros</a>
+        <a href="#discografia" onclick="toggleMenu()">Discografía</a>
+        <a href="#singles" onclick="toggleMenu()">Singles</a>
+        <a href="#banda" onclick="toggleMenu()">Banda</a>
+        <a href="#shows" onclick="toggleMenu()">Shows</a>
+        <a href="#escuchar" onclick="toggleMenu()">Escuchar</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-video-bg">
+            <video autoplay muted loop playsinline>
+                <source src="https://res.cloudinary.com/diobgaxfl/video/upload/v1770234544/Obesity_Background_ner2yd.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="hero-logo">
+            <img src="https://res.cloudinary.com/diobgaxfl/image/upload/v1770231662/obesity_vector_vnswx7.png" alt="Obesity">
+        </div>
+        <p class="hero-tagline">Progressive Metal / Djent Instrumental</p>
+        
+        <div class="hero-spotify">
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/5XOXoBj0PgpypcRijFLRTh?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+        
+        <div class="hero-buttons">
+            <a href="https://linktr.ee/obesityband" target="_blank" class="hero-btn primary">
+                <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm4.441 16.892c-2.102.144-6.784.144-8.883 0C5.282 16.736 5.017 15.622 5 12c.017-3.629.285-4.736 2.558-4.892 2.099-.144 6.782-.144 8.883 0C18.718 7.264 18.982 8.378 19 12c-.018 3.629-.285 4.736-2.559 4.892zM10 9.658l4.917 2.338L10 14.342V9.658z"/></svg>
+                Compra / Stream
+            </a>
+            <a href="https://youtu.be/5aSF7xjwKTI?si=tjDkyUdlLqgBWB9t" target="_blank" class="hero-btn">
+                <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                Ver 'Duckzilla'
+            </a>
+            <a href="https://youtu.be/5sRB8ToQ3O0?si=Qg3telsI76bycFrJ" target="_blank" class="hero-btn">
+                <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                Ver '911'
+            </a>
+            <a href="https://youtu.be/4B0ZRAyzXRA?si=De6dlktSrhVtf-Aa" target="_blank" class="hero-btn">
+                <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                Ver 'Flock'
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="nosotros">
+        <div class="section-bg"></div>
+        <h2 class="section-title">Nosotros</h2>
+        <div class="about-content">
+            <p>Obesity es una banda instrumental de metal progresivo y djent originaria de Ojo de Agua, Estado de México. Desde 2009, hemos fusionado la técnica del prog metal con la agresividad del djent para crear un sonido único: rítmico, brutal, pegajoso, agresivo, groovie y hasta dulce.</p>
+            <p>Nuestro emblema es Patrick, un pato que fue nuestra mascota real durante los primeros años de la banda. Obeso y agresivo, Patrick estuvo presente en cada ensayo hasta su muerte en 2018, convirtiéndose en el símbolo perfecto de lo que representa nuestra música: algo que no esperas, que rompe tus expectativas.</p>
+            <p>Con presentaciones en festivales como Hell and Heaven y tours con bandas como Soen y TesseracT, además de giras por Estados Unidos, Colombia y Costa Rica, seguimos llevando nuestra música a todos los rincones. Únete al movimiento.</p>
+        </div>
+    </section>
+
+    <!-- Discography Section -->
+    <section class="discografia" id="discografia">
+        <div class="section-bg"></div>
+        <h2 class="section-title">Discografía</h2>
+        <div class="albums-grid">
+            <div class="album-card">
+                <a href="https://open.spotify.com/album/5XOXoBj0PgpypcRijFLRTh" target="_blank">
+                    <div class="album-cover">
+                        <img src="https://res.cloudinary.com/diobgaxfl/image/upload/v1770233666/obesity-duckinvasion-2024-2999-01_wx8pv2.jpg" alt="Duckinvasion">
+                        <span class="album-type">Álbum</span>
+                    </div>
+                    <div class="album-info">
+                        <h3 class="album-title">Duckinvasion</h3>
+                        <p class="album-year">2024</p>
+                    </div>
+                </a>
+            </div>
+            <div class="album-card">
+                <a href="https://open.spotify.com/album/73GvQIwsqLQ0QmfucqY5bB" target="_blank">
+                    <div class="album-cover">
+                        <img src="https://res.cloudinary.com/diobgaxfl/image/upload/v1770233668/Patrick_gy9smn.jpg" alt="Patrick">
+                        <span class="album-type">Álbum</span>
+                    </div>
+                    <div class="album-info">
+                        <h3 class="album-title">Patrick</h3>
+                        <p class="album-year">2018</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Singles Section -->
+    <section class="singles" id="singles">
+        <div class="section-bg"></div>
+        <h2 class="section-title">Singles</h2>
+        <div class="singles-grid">
+            <div class="single-card">
+                <a href="https://open.spotify.com/intl-es/album/6KfxH9pXeeaMR6SIbdwLuF?si=SicdrsRoSPagOmY_a8EV4A" target="_blank">
+                    <div class="single-cover">
+                        <img src="https://res.cloudinary.com/diobgaxfl/image/upload/v1770233664/Mallard_kbxcyc.jpg" alt="Mallard">
+                    </div>
+                    <h3 class="single-title">Mallard</h3>
+                    <p class="single-year">2023</p>
+                </a>
+            </div>
+            <div class="single-card">
+                <a href="https://open.spotify.com/intl-es/album/575CyplEsKF4IHX9hZaezZ?si=cF3ib1C8RKWI1WNpB4naUA" target="_blank">
+                    <div class="single-cover">
+                        <img src="https://res.cloudinary.com/diobgaxfl/image/upload/v1770233660/911_yt9mab.jpg" alt="911">
+                    </div>
+                    <h3 class="single-title">911</h3>
+                    <p class="single-year">2022</p>
+                </a>
+            </div>
+            <div class="single-card">
+                <a href="https://open.spotify.com/intl-es/album/3a4n3MzDmDhugAmmhL5IM3?si=PkzDcKESRqatQgxRLyPywA" target="_blank">
+                    <div class="single-cover">
+                        <img src="https://res.cloudinary.com/diobgaxfl/image/upload/v1770233659/Flock_m3asf9.jpg" alt="Flock">
+                    </div>
+                    <h3 class="single-title">Flock</h3>
+                    <p class="single-year">2021</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Band Divider -->
+    <div class="band-divider">
+        <img src="https://res.cloudinary.com/diobgaxfl/image/upload/v1770231662/obesity_vector_vnswx7.png" alt="Obesity">
+    </div>
+
+    <!-- Band Section -->
+    <section class="banda" id="banda">
+        <div class="section-bg"></div>
+        <div class="band-content">
+            <h2 class="section-title">Banda</h2>
+            <div class="band-photo">
+                <img src="https://res.cloudinary.com/diobgaxfl/image/upload/v1770231664/IMG_2618_ceg6ru.jpg" alt="Obesity Band">
+            </div>
+            <div class="members-grid">
+                <div class="member-card">
+                    <a href="https://www.instagram.com/obesityband/" target="_blank">
+                        <h3 class="member-name">Benjamin Berthier</h3>
+                        <p class="member-role">Bajo</p>
+                    </a>
+                </div>
+                <div class="member-card">
+                    <a href="https://www.instagram.com/obesityband/" target="_blank">
+                        <h3 class="member-name">Alfredo Ramirez</h3>
+                        <p class="member-role">Guitarra</p>
+                    </a>
+                </div>
+                <div class="member-card">
+                    <a href="https://www.instagram.com/obesityband/" target="_blank">
+                        <h3 class="member-name">Chucho RomUs</h3>
+                        <p class="member-role">Batería</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shows Section -->
+    <section class="shows" id="shows">
+        <div class="shows-video-bg">
+            <video autoplay muted loop playsinline>
+                <source src="https://res.cloudinary.com/diobgaxfl/video/upload/v1770231677/aflocks_viqgvd.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="shows-content">
+            <h2 class="section-title">Shows</h2>
+            <div class="shows-grid">
+                <div class="show-card">
+                    <a href="#">
+                        <div class="show-image">
+                            <img src="https://res.cloudinary.com/diobgaxfl/image/upload/v1770231662/SOEN_mx_23_tour_ktb8lk.png" alt="Tour con Soen">
+                            <div class="show-overlay">
+                                <h3 class="show-title">Tour con Soen</h3>
+                                <p class="show-date">México 2023</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="show-card">
+                    <a href="#">
+                        <div class="show-image">
+                            <img src="https://res.cloudinary.com/diobgaxfl/image/upload/v1770231661/398438218_722852662993404_7787206738127817194_n_eqcpgu.jpg" alt="Hell & Heaven">
+                            <div class="show-overlay">
+                                <h3 class="show-title">Hell & Heaven</h3>
+                                <p class="show-date">México</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="show-card">
+                    <a href="#">
+                        <div class="show-image">
+                            <img src="https://res.cloudinary.com/diobgaxfl/image/upload/v1770231660/TESSER_TOUR_MEDI_lvvp8d.png" alt="Tour con TesseracT">
+                            <div class="show-overlay">
+                                <h3 class="show-title">Tour con TesseracT</h3>
+                                <p class="show-date">México</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="shared-stage-inner">
+                <h3>Han compartido escenario con</h3>
+                <div class="bands-list">
+                    <span class="band-tag">Soen</span>
+                    <span class="band-tag">TesseracT</span>
+                    <span class="band-tag">The Winery Dogs</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Listen Section -->
+    <section class="listen" id="escuchar">
+        <div class="section-bg"></div>
+        <h2 class="section-title">Escuchar</h2>
+        <div class="platforms-grid">
+            <a href="https://open.spotify.com/artist/1YhGVmNndorZhzjMDTrdVG" target="_blank" class="platform-link"><svg viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>Spotify</a>
+            <a href="https://music.apple.com/artist/obesity" target="_blank" class="platform-link"><svg viewBox="0 0 24 24"><path d="M23.994 6.124a9.23 9.23 0 00-.24-2.19c-.317-1.31-1.062-2.31-2.18-3.043a5.022 5.022 0 00-1.877-.726 10.496 10.496 0 00-1.564-.15c-.04-.003-.083-.01-.124-.013H5.986c-.152.01-.303.017-.455.026-.512.027-1.023.072-1.532.17-.87.166-1.656.5-2.336 1.024C.848 1.802.256 2.638.06 3.64a8.71 8.71 0 00-.058 1.963c0 .147.006.294.012.442V17.91c0 .147-.006.294-.012.442a9.23 9.23 0 00.24 2.19c.317 1.31 1.062 2.31 2.18 3.043a5.022 5.022 0 001.877.726c.512.073 1.026.114 1.564.15.152.01.303.017.455.026h12.022c.152-.01.303-.017.455-.026a10.496 10.496 0 001.564-.15 5.022 5.022 0 001.877-.726c1.118-.732 1.863-1.732 2.18-3.043.122-.507.192-1.027.24-1.748.006-.148.012-.295.012-.442V6.566c0-.147-.006-.294-.012-.442z"/></svg>Apple Music</a>
+            <a href="https://www.youtube.com/c/obesityband" target="_blank" class="platform-link"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>YouTube</a>
+            <a href="https://soundcloud.com/obesityband" target="_blank" class="platform-link"><svg viewBox="0 0 24 24"><path d="M1.175 12.225c-.051 0-.094.046-.101.1l-.233 2.154.233 2.105c.007.058.05.098.101.098.05 0 .09-.04.099-.098l.255-2.105-.27-2.154c-.009-.06-.052-.1-.102-.1"/></svg>SoundCloud</a>
+            <a href="https://music.amazon.com/artists/obesity" target="_blank" class="platform-link"><svg viewBox="0 0 24 24"><path d="M13.958 10.09c0 1.232.029 2.256-.591 3.351-.502.891-1.301 1.438-2.186 1.438-1.214 0-1.922-.924-1.922-2.292 0-2.692 2.415-3.182 4.7-3.182v.685z"/></svg>Amazon</a>
+            <a href="https://deezer.com/artist/obesity" target="_blank" class="platform-link"><svg viewBox="0 0 24 24"><path d="M18.81 4.16v3.03H24V4.16h-5.19zM6.27 8.38v3.027h5.189V8.38h-5.19zm12.54 0v3.027H24V8.38h-5.19zM0 12.59v3.027h5.19V12.59H0z"/></svg>Deezer</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">
+            <img src="https://res.cloudinary.com/diobgaxfl/image/upload/v1770231662/obesity_vector_vnswx7.png" alt="Obesity">
+        </div>
+        <div class="footer-social">
+            <a href="https://www.facebook.com/Obesityband/" target="_blank"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+            <a href="https://www.instagram.com/obesityband/" target="_blank"><svg viewBox="0 0 24 24"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0z"/></svg></a>
+            <a href="https://www.youtube.com/c/obesityband" target="_blank"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+            <a href="https://twitter.com/obesityband" target="_blank"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        </div>
+        <div class="footer-contact"><p>Contacto: <a href="mailto:contact@obesityband.com">contact@obesityband.com</a></p></div>
+        <p class="footer-copy">© 2024 Obesity. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('mobileMenu').classList.toggle('active');
+        }
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+        document.querySelectorAll('.album-card, .single-card, .member-card, .show-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
